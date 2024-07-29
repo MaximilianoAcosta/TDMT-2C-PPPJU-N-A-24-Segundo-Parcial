@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
-    [SerializeField] EntityMovement entityMovement;
     [SerializeField] float speed;
-
+    [SerializeField] Rigidbody rb;
+    [SerializeField] int duration;
+    [SerializeField] int LayerNumber;
+    private Vector3 direction;
     private void Awake()
     {
-        entityMovement.GetComponent<EntityMovement>();
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerNumber) 
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(DisableAfterTime());
     }
     private void Update()
     {
-        entityMovement.SetDirection(speed * Time.deltaTime * transform.forward);
+        direction = (speed * Time.deltaTime * transform.forward);
+    }
+
+    private void FixedUpdate()
+    {
+        if (rb) { rb.velocity = direction; }
+    }
+    private IEnumerator DisableAfterTime()
+    {
+        yield return new WaitForSeconds(duration);
+        gameObject.SetActive(false);
     }
 }

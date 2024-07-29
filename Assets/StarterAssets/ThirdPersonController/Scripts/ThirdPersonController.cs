@@ -76,6 +76,7 @@ namespace StarterAssets
 
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
+        public GameObject Crosshair;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -432,12 +433,14 @@ namespace StarterAssets
                     PistolAimRig.layers[0].active = true;
                 }
                 _Aiming = true;
+                Crosshair.SetActive(true);
                 _animator.SetBool(_animIDAiming, true);
             }
             else
             {
                 PistolAimRig.layers[0].active = false;
                 _Aiming = false;
+                Crosshair.SetActive(false);
                 _animator.SetBool(_animIDAiming, false);
             }
         }

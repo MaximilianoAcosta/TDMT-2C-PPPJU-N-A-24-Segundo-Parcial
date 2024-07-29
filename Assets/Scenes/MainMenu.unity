@@ -966,6 +966,8 @@ GameObject:
   - component: {fileID: 676661331}
   - component: {fileID: 676661333}
   - component: {fileID: 676661334}
+  - component: {fileID: 676661335}
+  - component: {fileID: 676661336}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1031,6 +1033,41 @@ MonoBehaviour:
   - {fileID: 1011238264}
   - {fileID: 1540586229}
   - {fileID: 698410348}
+--- !u!114 &676661335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676661330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824f103cc094d6841a4988594bc92b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 11400000, guid: 0737f42e4d483ea4eb9d304f89859f18, type: 2}
+  RVR_Ammo: {fileID: 11400000, guid: 73ac8a52389a4f549af2be4bc51ad632, type: 2}
+  SMG_Ammo: {fileID: 11400000, guid: 8fb5a5d6a7db4c54d8df9c9810876b55, type: 2}
+  DefaultHealth: 100
+  DefaultRVR: 30
+  DefaultSMG: 60
+  _PlayerHealth: {fileID: 0}
+  _PlayerBullets: {fileID: 0}
+  _RevolverID: 
+  _SmgID: 
+--- !u!114 &676661336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676661330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93aaa090b20647459b4b6bdd3959e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveValueManager: {fileID: 676661335}
 --- !u!1 &698410348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2906120746199157770, guid: 34906244e4162d943899c7de986cf175,

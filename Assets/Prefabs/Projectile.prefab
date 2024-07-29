@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8112246732850280009}
   - component: {fileID: 3079982747316399753}
   - component: {fileID: 5984260244212242346}
-  - component: {fileID: 3132846781762579468}
   - component: {fileID: 2014637463898821834}
   - component: {fileID: 702499287839495446}
   - component: {fileID: 7680464742400417825}
@@ -34,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741684917334193554}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.030358529, z: -0, w: 0.99953914}
+  m_LocalRotation: {x: 0, y: 0.70002013, z: 0, w: 0.71412313}
   m_LocalPosition: {x: -9.57, y: 1.13, z: -12}
   m_LocalScale: {x: 0.50503, y: 0.50503, z: 0.50503}
   m_ConstrainProportionsScale: 0
@@ -112,20 +111,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3132846781762579468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741684917334193554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0afa0245b2467444ad66382593b7fbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 2182459396768598067}
-  speed: 30
 --- !u!114 &2014637463898821834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4995,8 +4980,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354c7c40f9f79e64499d82fd0c788c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityMovement: {fileID: 3132846781762579468}
-  speed: 60
+  speed: 2300
+  rb: {fileID: 0}
+  duration: 10
+  LayerNumber: 8
 --- !u!114 &7361186418725680519
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class HealthController : MonoBehaviour
 {
     [SerializeField] PlayerDataCreator<float> HealthSource;
     private float MaxHealth;
+    public bool alive { get; set; }
     public float Health { get; set; }
 
 
@@ -15,6 +17,7 @@ public class HealthController : MonoBehaviour
 
     public void Awake()
     {
+        alive = true;
         MaxHealth = HealthSource.Value;
         Health = MaxHealth;
     }
@@ -39,6 +42,7 @@ public class HealthController : MonoBehaviour
     {
         if (Health <= 0)
         {
+            alive = false;
             onDeathEvent?.Invoke();
         }
     }

@@ -11,6 +11,7 @@ public class ContinuousGunFire : MonoBehaviour, IWeapons
     [SerializeField] private StarterAssetsInputs _input;
     [SerializeField] private GameObject AimTarget;
 
+    [SerializeField] private GameObject targetBleed;
     [SerializeField] private string AmmoType;
     [SerializeField] private string EnemyTag;
     
@@ -53,7 +54,7 @@ public class ContinuousGunFire : MonoBehaviour, IWeapons
 
         }
 
-        Debug.Log("Shooting" + Shooting);
+        
 
     }
     public void toggleShot()
@@ -80,7 +81,7 @@ public class ContinuousGunFire : MonoBehaviour, IWeapons
         {
             if (hit.transform.gameObject.CompareTag(EnemyTag))
             {
-                //targetBleed.onHit(hit.point);
+                Instantiate(targetBleed, hit.point, hit.transform.rotation);
                 hit.transform.TryGetComponent(out HealthController EnemyHealth);
                 if (EnemyHealth != null) EnemyHealth.takeDamage(damage);
                 hit.transform.TryGetComponent(out EnemyMovement movement);

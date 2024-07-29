@@ -13,8 +13,10 @@ public class EnemyRangeAttack : MonoBehaviour, IEnemyAttack
     [SerializeField] private float AttackWindup;
     [SerializeField] private float AttackDuration;
     [SerializeField] private float AttackCoolDown;
+    [SerializeField] private EnemyObjectPool Pool;
     private void Start()
     {
+        Pool = FindObjectOfType<EnemyObjectPool>();
         EnemyBehaviour = GetComponent<EnemyBehaviour>();
         AnimController = GetComponent<EnemyAnimationController>();
     }
@@ -22,10 +24,7 @@ public class EnemyRangeAttack : MonoBehaviour, IEnemyAttack
     public void Attack()
     {
 
-        // Debug.Log("Attacked");
-
         StartCoroutine(ActivateAttackHitBox());
-
 
     }
     private IEnumerator ActivateAttackHitBox()
@@ -34,7 +33,8 @@ public class EnemyRangeAttack : MonoBehaviour, IEnemyAttack
         EnemyBehaviour.IsAttacking = true;
         AnimController?.SetIsAttacking(true);
         yield return new WaitForSeconds(AttackWindup);
-        Instantiate(Projectile,ProjectileSpawnPoint.transform.position, transform.rotation);
+        activateProjectile();
+        //Instantiate(Projectile,ProjectileSpawnPoint.transform.position, ProjectileSpawnPoint.transform.rotation);
         yield return new WaitForSeconds(AttackDuration);
         EnemyBehaviour.IsAttacking = false;
         AnimController?.SetIsAttacking(false);
@@ -44,5 +44,18 @@ public class EnemyRangeAttack : MonoBehaviour, IEnemyAttack
     {
         yield return new WaitForSeconds(AttackCoolDown);
         EnemyBehaviour.CanAttack = true;
+    }
+
+    private void activateProjectile()
+    {
+
+        GameObject projectile = Pool.GetFromPool();
+        setBullet(projectile);
+        projectile.SetActive(true);
+    }
+    private void setBullet(GameObject bullet)
+    {
+        bullet.transform.position = ProjectileSpawnPoint.transform.position;
+        bullet.transform.rotation = ProjectileSpawnPoint.transform.rotation;
     }
 }

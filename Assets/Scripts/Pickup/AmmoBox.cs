@@ -35,15 +35,15 @@ public class AmmoBox : MonoBehaviour
         switch (type)
         {
             case "RevAmmo":
-                Debug.Log($"Added revolver bullets");
+                
                 PlayerBullets.AddBullets(type, Random.Range(MinRevBullet, MaxRevBullet + 1));
                 break;
             case "SmgAmmo":
-                Debug.Log($"Added smg bullets");
+                
                 PlayerBullets.AddBullets(type, Random.Range(MinSmgBullet, MaxSmgBullet + 1));
                 break;
             default:
-                Debug.Log(type);
+                
                 break;
         }
     }

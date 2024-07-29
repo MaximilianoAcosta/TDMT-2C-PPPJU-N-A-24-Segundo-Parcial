@@ -52,7 +52,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.6327028
+  m_Radius: 1.23
   m_Center: {x: 0.006252996, y: 0, z: 0.06894949}
 --- !u!114 &2974063341030048090
 MonoBehaviour:
@@ -106,7 +106,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9999804, z: -0, w: -0.0062656486}
   m_LocalPosition: {x: -10.17, y: 1.91, z: 7.52}
-  m_LocalScale: {x: 1.1945, y: 1.1945, z: 1.1945}
+  m_LocalScale: {x: 1.384545, y: 1.384545, z: 1.384545}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1157933220280858126}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a214101cffd21b5479385f75e355a93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinDistance: 2.4
+  MinDistance: 2.05
   EnemyBehaviour: {fileID: 3775749374279248962}
   AnimController: {fileID: 4886189761351415254}
   StunRecovery: 2

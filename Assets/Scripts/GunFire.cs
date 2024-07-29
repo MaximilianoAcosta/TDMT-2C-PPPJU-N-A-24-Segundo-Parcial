@@ -13,7 +13,7 @@ public class GunFire : MonoBehaviour, IWeapons
     [SerializeField] private string EnemyTag;
     [SerializeField] private PlayerBullets _playerBullets;
     [SerializeField] private AudioSource AudioSource;
-    //[SerializeField] private EnemyBleed targetBleed;
+    [SerializeField] private GameObject targetBleed;
     [SerializeField] private float damage;
     [SerializeField] float RateOfFire;
     [SerializeField] private string AmmoType;
@@ -47,7 +47,7 @@ public class GunFire : MonoBehaviour, IWeapons
                 Debug.DrawRay(transform.position, transform.forward, Color.green, 5);
                 if (hit.transform.gameObject.CompareTag(EnemyTag))
                 {
-                    //targetBleed.onHit(hit.point);
+                    Instantiate(targetBleed, hit.point, hit.transform.rotation);
                     hit.transform.TryGetComponent(out HealthController EnemyHealth);
                     if (EnemyHealth != null) EnemyHealth.takeDamage(damage);
                     hit.transform.TryGetComponent(out EnemyMovement movement);

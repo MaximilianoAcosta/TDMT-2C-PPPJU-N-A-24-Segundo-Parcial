@@ -9,11 +9,12 @@ public class LoaderManager : MonoBehaviour
 
     public float loadingProgress;
     public float timeLoading;
-    public float fakeLoadTime = 5;
+    public float fakeLoadTime;
 
     public static event Action<LoaderManager> OnLoadingStart;
     public static event Action<LoaderManager> OnLoadingEnd;
 
+  
     public static LoaderManager Get()
     {
         return instance;

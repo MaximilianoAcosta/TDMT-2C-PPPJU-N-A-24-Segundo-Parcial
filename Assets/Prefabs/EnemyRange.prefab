@@ -52,7 +52,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.6349305
+  m_Radius: 0.84
   m_Center: {x: -0.020749813, y: 0, z: 0.11418103}
 --- !u!114 &5472717468760307417
 MonoBehaviour:
@@ -4936,7 +4936,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9999804, z: -0, w: -0.0062656486}
   m_LocalPosition: {x: -6.02, y: 2.78, z: 1.66}
-  m_LocalScale: {x: 1.1945, y: 1.1945, z: 1.1945}
+  m_LocalScale: {x: 1.3950565, y: 1.3950565, z: 1.3950565}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7999267601500115576}
@@ -5060,6 +5060,7 @@ MonoBehaviour:
   AttackWindup: 0.3
   AttackDuration: 0.2
   AttackCoolDown: 1.5
+  Pool: {fileID: 0}
 --- !u!114 &6851954252259570220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10007,6 +10008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7866187586662744620}
+  - component: {fileID: 7005691150587784614}
   m_Layer: 6
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
@@ -10029,6 +10031,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4079088567652736195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7005691150587784614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7934919973170378996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ed1eee9aeef7d48869c6b37bdb6745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  playertag: Target
 --- !u!1001 &7532731059600487827
 PrefabInstance:
   m_ObjectHideFlags: 0

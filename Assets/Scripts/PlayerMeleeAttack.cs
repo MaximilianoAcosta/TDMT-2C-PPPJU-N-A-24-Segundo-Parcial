@@ -22,12 +22,17 @@ public class PlayerMeleeAttack : MonoBehaviour, IWeapons
     {
         Collider.SetActive(false);
     }
+    private void OnEnable()
+    {
+        CanAttack = true;
+    }
     public void Shoot()
     {
         if(_input.Aiming && CanAttack)
         {
             StartCoroutine(MeleeAttack());
         }
+       
     }
 
     private IEnumerator MeleeAttack()

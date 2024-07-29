@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PauseGame : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] HealthController healthController;
     private bool paused = false;
+    private ThirdPersonController ThirdPersonController;
 
     private void Start()
     {
+        healthController = GetComponent<HealthController>();
+        ThirdPersonController = GetComponent<ThirdPersonController>();
         Time.timeScale = 1;
         if (paused)
         {
@@ -19,11 +21,11 @@ public class PauseGame : MonoBehaviour
     }
     public void OnPausePressed(InputValue value)
     {
-        if(value.isPressed && !paused)
+        if (value.isPressed && !paused)
         {
             Pause();
         }
-        else if (value.isPressed && paused)
+        else if (value.isPressed && paused && healthController.alive)
         {
             Resume();
         }
@@ -33,23 +35,21 @@ public class PauseGame : MonoBehaviour
 
     public void Pause()
     {
-        if (Time.timeScale == 1)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            paused = true;
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
-        }
+        ThirdPersonController.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        paused = true;
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+
     }
 
     public void Resume()
     {
-        if(Time.timeScale == 0)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            paused = false;
-            Time.timeScale = 1;
-            pauseMenu.SetActive(false);
-        }
+        ThirdPersonController.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        paused = false;
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+
     }
 }

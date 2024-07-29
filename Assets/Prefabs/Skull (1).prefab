@@ -4891,7 +4891,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7.4
+  m_Radius: 8.51
   m_Center: {x: 0.006252996, y: 0, z: 0.06894949}
 --- !u!114 &891175015319705914
 MonoBehaviour:
@@ -5144,6 +5144,7 @@ MonoBehaviour:
   AttackWindup: 0.2
   AttackDuration: 0.1
   AttackCoolDown: 0.5
+  Pool: {fileID: 0}
 --- !u!114 &9181370294129191743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5357,14 +5358,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3162139202895116283}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d9eb9537acc20f46aa5e2344448f1c9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2877961054793920349}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6d9eb9537acc20f46aa5e2344448f1c9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8527591100177510003}
   m_SourcePrefab: {fileID: 100100000, guid: 6d9eb9537acc20f46aa5e2344448f1c9, type: 3}
 --- !u!1 &8263336096032083065 stripped
 GameObject:
@@ -5373,36 +5366,6 @@ GameObject:
   m_PrefabInstance: {fileID: 9109706397711003944}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3162139202895116283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8263336096032083065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a686b167977e14d94b51a6da4db167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amp: 0.4
-  speed: 3
-  parent: {fileID: 7169850492015786048}
---- !u!114 &2877961054793920349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8263336096032083065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a686b167977e14d94b51a6da4db167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amp: 0.4
-  speed: 3
-  parent: {fileID: 7169850492015786048}
---- !u!114 &8527591100177510003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
