@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static Unity.VisualScripting.Member;
 
 public class EnemyMeleeAttack : MonoBehaviour, IEnemyAttack
 {
@@ -13,6 +14,7 @@ public class EnemyMeleeAttack : MonoBehaviour, IEnemyAttack
     [SerializeField] private float AttackWindup;
     [SerializeField] private float AttackDuration;
     [SerializeField] private float AttackCoolDown;
+    [SerializeField] private AudioSource Asource;
     private void Start()
     {
         EnemyBehaviour = GetComponent<EnemyBehaviour>();
@@ -32,6 +34,7 @@ public class EnemyMeleeAttack : MonoBehaviour, IEnemyAttack
         EnemyBehaviour.CanAttack = false;
         EnemyBehaviour.IsAttacking = true;
         AnimController.SetIsAttacking(true);
+        Asource.PlayOneShot(Asource.clip);
         yield return new WaitForSeconds(AttackWindup);
         Collider.gameObject.SetActive(true);
         yield return new WaitForSeconds(AttackDuration);

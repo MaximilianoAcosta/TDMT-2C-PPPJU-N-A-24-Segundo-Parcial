@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static Unity.VisualScripting.Member;
 
 public class EnemyRangeAttack : MonoBehaviour, IEnemyAttack
 {
@@ -14,6 +15,7 @@ public class EnemyRangeAttack : MonoBehaviour, IEnemyAttack
     [SerializeField] private float AttackDuration;
     [SerializeField] private float AttackCoolDown;
     [SerializeField] private EnemyObjectPool Pool;
+    [SerializeField] private AudioSource Asource;
     private void Start()
     {
         Pool = FindObjectOfType<EnemyObjectPool>();
@@ -32,6 +34,7 @@ public class EnemyRangeAttack : MonoBehaviour, IEnemyAttack
         EnemyBehaviour.CanAttack = false;
         EnemyBehaviour.IsAttacking = true;
         AnimController?.SetIsAttacking(true);
+        Asource?.PlayOneShot(Asource.clip);
         yield return new WaitForSeconds(AttackWindup);
         activateProjectile();
         //Instantiate(Projectile,ProjectileSpawnPoint.transform.position, ProjectileSpawnPoint.transform.rotation);
